@@ -20,7 +20,7 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="289.0dp"
+            android:layout_height="330.0dp"
             android:id="@+id/layoutLogin"
             android:background="@android:color/background_light"
             android:layout_margin="10px"
@@ -30,16 +30,16 @@
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="101.5dp"
+                android:layout_height="120dp"
                 android:id="@+id/layoutImagem"
                 android:gravity="top"
-                android:background="@android:color/holo_blue_dark"
+                android:background="@android:color/transparent"
                 android:layout_gravity="top"
-                android:layout_marginBottom="57.0dp">
+                android:layout_marginTop="10px">
                 <ImageView
                     android:src="@android:drawable/ic_menu_gallery"
                     android:layout_width="match_parent"
-                    android:layout_height="102.0dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/imgLogo"
                     android:layout_gravity="center_horizontal"
                     android:foregroundGravity="center"/>
@@ -49,20 +49,53 @@
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="52.5dp"
+                android:layout_height="40.5dp"
                 android:id="@+id/linearLayout1"
-                android:background="@android:color/holo_red_dark">
+                android:background="@android:color/transparent"
+                android:layout_marginTop="30px">
                 <ImageView
                     android:src="@android:drawable/ic_menu_gallery"
-                    android:layout_width="78.0dp"
+                    android:layout_width="67.0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/imageView1" />
+                    android:id="@+id/imgUser" />
                 <EditText
                     android:inputType="textPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/editText1" />
+                    android:id="@+id/txtUser"
+                    android:layout_marginRight="20px" />
             </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="40.5dp"
+                android:id="@+id/linearLayout2"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="30px">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="67.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgSenha" />
+                <EditText
+                    android:inputType="textPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txtSenha"
+                    android:layout_marginRight="20px" />
+            </LinearLayout>
+            <Button
+                android:text="ENTRAR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnLogin"
+                android:layout_marginTop="45px"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:autoText="true" />
 
         </LinearLayout>
     </LinearLayout>
