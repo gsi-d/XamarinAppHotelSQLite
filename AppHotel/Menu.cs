@@ -14,7 +14,7 @@ namespace AppHotel
     [Activity(Label = "Menu")]
     public class Menu : Activity
     {
-        MainActivity main = new MainActivity();
+        Variaveis var = new Variaveis();
 
         ImageView imgUsuario;
         TextView txtUsuario, txtCargo;
@@ -28,9 +28,12 @@ namespace AppHotel
             txtUsuario = FindViewById<TextView>(Resource.Id.txtUser);
             txtCargo = FindViewById<TextView>(Resource.Id.txtUser);
 
+            var.userLogado = Intent.GetStringExtra("user");
+            var.cargoUser = Intent.GetStringExtra("cargo");
+
             imgUsuario.SetImageResource(Resource.Drawable.usuarios);
-            txtUsuario.Text = "Usuário: " + Intent.GetStringExtra("user");
-            txtCargo.Text = "Cargo: " + Intent.GetStringExtra("cargo");
+            txtUsuario.Text = "Usuário: " + var.userLogado;
+            txtCargo.Text = "Cargo: " + var.cargoUser;
         }
     }
 }

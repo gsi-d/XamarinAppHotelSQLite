@@ -14,11 +14,12 @@ namespace AppHotel
     public class MainActivity : AppCompatActivity
     {
         public List<Login> logins = new List<Login>();
+        Variaveis var = new Variaveis();
 
         ImageView imgLogo, imgUser, imgSenha;
         EditText txtUser, txtSenha;
         Button btnLogin;
-        public string userLogado, cargoUser;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,17 +55,26 @@ namespace AppHotel
             for (int i = 0; i < logins.Count; i++)
             {
                 if(txtUser.Text.ToString().Trim() == "")
+                {
                     Toast.MakeText(Application.Context, "Preencha o usuário!", ToastLength.Long).Show();
+                    txtUser.RequestFocus();
+                }      
                 if(txtSenha.Text.ToString().Trim() == "")
+                {
                     Toast.MakeText(Application.Context, "Preencha a senha!", ToastLength.Long).Show();
+                    txtSenha.RequestFocus();
+                }
                 else if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
                 {
                     Toast.MakeText(Application.Context, "Login sucessfull!", ToastLength.Long).Show();
-                    userLogado = txtUser.Text.ToString();
-                    cargoUser = logins[i].Cargo;
+
+                    var.userLogado = logins[i].User.ToString();
+                    var.cargoUser = logins[i].Cargo.ToString();
+
                     var tela = new Intent(this, typeof(Menu));
-                    tela.PutExtra("user", userLogado);
-                    tela.PutExtra("cargo", cargoUser);
+                    tela.PutExtra("user", var.userLogado);
+                    tela.PutExtra("cargo", var.cargoUser);
+
                     StartActivity(tela);
                     Limpar();
                 }
