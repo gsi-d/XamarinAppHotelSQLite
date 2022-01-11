@@ -56,7 +56,7 @@
             },
             "Xamarin.Google.Android.Material": {
               "target": "Package",
-              "version": "[1.0.0.1, )"
+              "version": "[1.4.0.4, )"
             }
           }
         }

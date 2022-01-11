@@ -16,8 +16,7 @@ namespace AppHotel
 
         ImageView imgLogo, imgUser, imgSenha;
         EditText txtUser, txtSenha;
-        
-        
+        Button btnLogin;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,12 +25,13 @@ namespace AppHotel
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            
             imgLogo = FindViewById < ImageView > (Resource.Id.imgLogo);
             imgUser = FindViewById < ImageView > (Resource.Id.imgUser);
             imgSenha = FindViewById < ImageView > (Resource.Id.imgSenha);
             txtUser = FindViewById <EditText> (Resource.Id.txtUser);
             txtSenha = FindViewById <EditText> (Resource.Id.txtSenha);
-            //btnLogin.FindViewById<Button>(Resource.Id.btnLogin);
+            btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
 
             imgLogo.SetImageResource(Resource.Drawable.logo);
             imgSenha.SetImageResource(Resource.Drawable.senha);
@@ -39,7 +39,7 @@ namespace AppHotel
             geraLogins(logins);
             
 
-            //btnLogin.Click += BtnEntrar_Click;
+            btnLogin.Click += BtnEntrar_Click;
         }
 
         private void BtnEntrar_Click(object sender, System.EventArgs e)
@@ -51,13 +51,19 @@ namespace AppHotel
         {
             for (int i = 0; i < logins.Count; i++)
             {
-                if((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
+                if(txtUser.Text.ToString().Trim() == "")
+                    Toast.MakeText(Application.Context, "Preencha o usuário!", ToastLength.Long).Show();
+                if(txtSenha.Text.ToString().Trim() == "")
+                    Toast.MakeText(Application.Context, "Preencha a senha!", ToastLength.Long).Show();
+                else if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
                 {
                     Toast.MakeText(Application.Context, "Login sucessfull!", ToastLength.Long).Show();
+                    StartActivity(typeof(Menu));
                 }
                 else
                 {
-                    Toast.MakeText(Application.Context, "Usuário ou senha não cadastrados!", ToastLength.Long).Show();
+                    Toast.MakeText(Application.Context, "Invalid login!", ToastLength.Long).Show();
+                    Limpar();
                 }
             }
         }
@@ -77,6 +83,12 @@ namespace AppHotel
             logins.Add(new Login() { User = "Gustavo", Password = "21062002" });
             logins.Add(new Login() { User = "Cleusa", Password = "14111978" });
             logins.Add(new Login() { User = "Francisco", Password = "02021900" });
+        }
+
+        private void Limpar()
+        {
+            txtUser.Text = "";
+            txtSenha.Text = "";
         }
     }
 }
