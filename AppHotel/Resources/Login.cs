@@ -13,10 +13,11 @@ namespace AppHotel.Resources
 {
     public class Login
     {
-        public Login(string user, string password)
+        public Login(string user, string password, string cargo)
         {
             User = user;
             Password = password;
+            Cargo = cargo;
         }
 
         public Login()
@@ -26,6 +27,7 @@ namespace AppHotel.Resources
 
         public string User { get; set; }
         public string Password { get; set; }
+        public string Cargo { get; set; }
 
         
     }   

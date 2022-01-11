@@ -31,6 +31,7 @@ foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 FrameLayout;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\layout\bottomtablayout.xml
 ImageView;obj\Debug\110\res\layout\activity_main.xml
+ImageView;obj\Debug\110\res\layout\menu.xml
 item;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\values\styles.xml
 item;obj\Debug\110\res\values\styles.xml
 LinearLayout;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\layout\bottomtablayout.xml
@@ -54,6 +55,7 @@ string;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54
 string;obj\Debug\110\res\values\strings.xml
 style;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\values\styles.xml
 style;obj\Debug\110\res\values\styles.xml
+TextView;obj\Debug\110\res\layout\menu.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\enterfromleft.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\enterfromright.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\exittoleft.xml

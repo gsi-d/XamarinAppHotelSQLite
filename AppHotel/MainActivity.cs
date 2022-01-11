@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
@@ -17,6 +18,7 @@ namespace AppHotel
         ImageView imgLogo, imgUser, imgSenha;
         EditText txtUser, txtSenha;
         Button btnLogin;
+        public string userLogado, cargoUser;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -58,7 +60,13 @@ namespace AppHotel
                 else if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
                 {
                     Toast.MakeText(Application.Context, "Login sucessfull!", ToastLength.Long).Show();
-                    StartActivity(typeof(Menu));
+                    userLogado = txtUser.Text.ToString();
+                    cargoUser = logins[i].Cargo;
+                    var tela = new Intent(this, typeof(Menu));
+                    tela.PutExtra("user", userLogado);
+                    tela.PutExtra("cargo", cargoUser);
+                    StartActivity(tela);
+                    Limpar();
                 }
                 else
                 {
@@ -77,12 +85,12 @@ namespace AppHotel
 
         public void geraLogins(List<Login> logins)
         {
-            logins.Add(new Login() { User = "Guilherme", Password = "14052001" });
-            logins.Add(new Login() { User = "Maicon", Password = "25021997" });
-            logins.Add(new Login() { User = "Camila", Password = "21102003" });
-            logins.Add(new Login() { User = "Gustavo", Password = "21062002" });
-            logins.Add(new Login() { User = "Cleusa", Password = "14111978" });
-            logins.Add(new Login() { User = "Francisco", Password = "02021900" });
+            logins.Add(new Login() { User = "Guilherme", Password = "14052001", Cargo = "Estagiário" });
+            logins.Add(new Login() { User = "Maicon", Password = "25021997", Cargo = "Motoboy" });
+            logins.Add(new Login() { User = "Camila", Password = "21102003", Cargo = "Relações Internacionais" });
+            logins.Add(new Login() { User = "Gustavo", Password = "21062002", Cargo = "Motoboy" });
+            logins.Add(new Login() { User = "Cleusa", Password = "14111978", Cargo = "Costureira" });
+            logins.Add(new Login() { User = "Francisco", Password = "02021900", Cargo = "Aposentado" });
         }
 
         private void Limpar()
