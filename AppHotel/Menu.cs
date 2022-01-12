@@ -25,8 +25,8 @@ namespace AppHotel
             // Create your application here
             SetContentView(Resource.Layout.Menu);
             imgUsuario = FindViewById<ImageView>(Resource.Id.imgUser);
-            txtUsuario = FindViewById<TextView>(Resource.Id.txtUser);
-            txtCargo = FindViewById<TextView>(Resource.Id.txtUser);
+            txtUsuario = FindViewById<TextView>(Resource.Id.txtUsuario);
+            txtCargo = FindViewById<TextView>(Resource.Id.txtCargo);
 
             var.userLogado = Intent.GetStringExtra("user");
             var.cargoUser = Intent.GetStringExtra("cargo");

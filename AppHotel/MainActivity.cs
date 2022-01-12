@@ -52,9 +52,10 @@ namespace AppHotel
 
         private void verificaLogin()
         {
+            int contador = 0;
             for (int i = 0; i < logins.Count; i++)
             {
-                if(txtUser.Text.ToString().Trim() == "")
+                /*if(txtUser.Text.ToString().Trim() == "")
                 {
                     Toast.MakeText(Application.Context, "Preencha o usuário!", ToastLength.Long).Show();
                     txtUser.RequestFocus();
@@ -63,26 +64,32 @@ namespace AppHotel
                 {
                     Toast.MakeText(Application.Context, "Preencha a senha!", ToastLength.Long).Show();
                     txtSenha.RequestFocus();
-                }
-                else if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
+                }*/
+                if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
                 {
+                    contador += 1;
                     Toast.MakeText(Application.Context, "Login sucessfull!", ToastLength.Long).Show();
 
-                    var.userLogado = logins[i].User.ToString();
-                    var.cargoUser = logins[i].Cargo.ToString();
+                    string user = logins[i].User.ToString();
+                    string cargo = logins[i].Cargo.ToString();
+
+                    var.userLogado = user;
+                    var.cargoUser = cargo;
 
                     var tela = new Intent(this, typeof(Menu));
+
                     tela.PutExtra("user", var.userLogado);
                     tela.PutExtra("cargo", var.cargoUser);
 
                     StartActivity(tela);
                     Limpar();
-                }
-                else
-                {
-                    Toast.MakeText(Application.Context, "Invalid login!", ToastLength.Long).Show();
-                    Limpar();
-                }
+                }  
+            }
+            if (contador == 0)
+            {
+                Toast.MakeText(Application.Context, "Invalid login!", ToastLength.Long).Show();
+                Limpar();
+                txtUser.RequestFocus();
             }
         }
 
