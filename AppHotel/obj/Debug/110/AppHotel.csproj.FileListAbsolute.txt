@@ -8,6 +8,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\bin\Debug\com.companyname.
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\build.props
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\adb.props
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\AppHotel.csproj.AssemblyReference.cache
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res.flag
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\files.cache
@@ -71,6 +72,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\layout\m
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\senha.png
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\usuarios.png
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\logo.png
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\movimentacao.png
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\uploadflags.txt
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\resolvedassemblies.hash
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\AppHotel.dll

@@ -5,6 +5,8 @@ using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using AppHotel.Resources;
+using APPHotel;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
@@ -15,6 +17,7 @@ namespace AppHotel
     {
         public List<Login> logins = new List<Login>();
         Variaveis var = new Variaveis();
+        Conexao con = new Conexao();
 
         ImageView imgLogo, imgUser, imgSenha;
         EditText txtUser, txtSenha;
@@ -38,9 +41,7 @@ namespace AppHotel
 
             imgLogo.SetImageResource(Resource.Drawable.logo);
             imgSenha.SetImageResource(Resource.Drawable.senha);
-            imgUser.SetImageResource(Resource.Drawable.usuarios);
-            geraLogins(logins);
-            
+            imgUser.SetImageResource(Resource.Drawable.usuarios);  
 
             btnLogin.Click += BtnEntrar_Click;
         }
@@ -52,45 +53,62 @@ namespace AppHotel
 
         private void verificaLogin()
         {
-            int contador = 0;
-            for (int i = 0; i < logins.Count; i++)
+            if (txtUser.Text.ToString().Trim() == "")
             {
-                /*if(txtUser.Text.ToString().Trim() == "")
-                {
-                    Toast.MakeText(Application.Context, "Preencha o usuário!", ToastLength.Long).Show();
-                    txtUser.RequestFocus();
-                }      
-                if(txtSenha.Text.ToString().Trim() == "")
-                {
-                    Toast.MakeText(Application.Context, "Preencha a senha!", ToastLength.Long).Show();
-                    txtSenha.RequestFocus();
-                }*/
-                if ((txtUser.Text == logins[i].User) && (txtSenha.Text == logins[i].Password))
-                {
-                    contador += 1;
-                    Toast.MakeText(Application.Context, "Login sucessfull!", ToastLength.Long).Show();
-
-                    string user = logins[i].User.ToString();
-                    string cargo = logins[i].Cargo.ToString();
-
-                    var.userLogado = user;
-                    var.cargoUser = cargo;
-
-                    var tela = new Intent(this, typeof(Menu));
-
-                    tela.PutExtra("user", var.userLogado);
-                    tela.PutExtra("cargo", var.cargoUser);
-
-                    StartActivity(tela);
-                    Limpar();
-                }  
-            }
-            if (contador == 0)
-            {
-                Toast.MakeText(Application.Context, "Invalid login!", ToastLength.Long).Show();
-                Limpar();
+                Toast.MakeText(Application.Context, "Insira o usuário", ToastLength.Long).Show();
+                txtUser.Text = "";
                 txtUser.RequestFocus();
+                return;
             }
+
+            if (txtSenha.Text.ToString().Trim() == "")
+            {
+                Toast.MakeText(Application.Context, "Preencha a senha!", ToastLength.Long).Show();
+                txtSenha.Text = "";
+                txtSenha.RequestFocus();
+                return;
+            }
+
+            //AQUI VAI O CÓDIGO PARA O LOGIN
+            MySqlCommand cmdVerificar;
+            MySqlDataReader reader;
+
+            con.AbrirCon();
+            cmdVerificar = new MySqlCommand("SELECT * FROM usuarios where usuario = @usuario and senha = @senha", con.con);
+            cmdVerificar.Parameters.AddWithValue("@usuario", txtUser.Text);
+            cmdVerificar.Parameters.AddWithValue("@senha", txtSenha.Text);
+            reader = cmdVerificar.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //EXTRAINDO INFORMAÇÕES DA CONSULTA DO LOGIN
+                while (reader.Read())
+                {
+                    //RECUPERAR OS DADOS DO USUÁRIO
+                    var.userLogado = reader["nome"].ToString();
+                    var.cargoUser = reader["cargo"].ToString();
+
+
+                }
+
+                //Toast.MakeText(Application.Context, "Login Efetuado com Sucesso!", ToastLength.Long).Show();
+
+                //INTENT PARA PASSAR PARAMETROS ENTRE ACT
+
+                var tela = new Intent(this, typeof(Menu));
+                tela.PutExtra("nome", var.userLogado);
+                tela.PutExtra("cargo", var.cargoUser);
+                StartActivity(tela);
+                Limpar();
+
+            }
+            else
+            {
+                Toast.MakeText(Application.Context, "Dados Incorretos!", ToastLength.Long).Show();
+                Limpar();
+            }
+
+            con.FecharCon();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -98,16 +116,6 @@ namespace AppHotel
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        public void geraLogins(List<Login> logins)
-        {
-            logins.Add(new Login() { User = "Guilherme", Password = "14052001", Cargo = "Estagiário" });
-            logins.Add(new Login() { User = "Maicon", Password = "25021997", Cargo = "Motoboy" });
-            logins.Add(new Login() { User = "Camila", Password = "21102003", Cargo = "Relações Internacionais" });
-            logins.Add(new Login() { User = "Gustavo", Password = "21062002", Cargo = "Motoboy" });
-            logins.Add(new Login() { User = "Cleusa", Password = "14111978", Cargo = "Costureira" });
-            logins.Add(new Login() { User = "Francisco", Password = "02021900", Cargo = "Aposentado" });
         }
 
         private void Limpar()
