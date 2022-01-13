@@ -38,9 +38,9 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
-            "MySql.Data": {
+            "MySqlConnector": {
               "target": "Package",
-              "version": "[8.0.27, )"
+              "version": "[2.1.2, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

@@ -6,7 +6,7 @@ using Android.Widget;
 using AndroidX.AppCompat.App;
 using AppHotel.Resources;
 using APPHotel;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 
@@ -53,6 +53,8 @@ namespace AppHotel
 
         private void verificaLogin()
         {
+            con.AbrirCon();
+
             if (txtUser.Text.ToString().Trim() == "")
             {
                 Toast.MakeText(Application.Context, "Insira o usuário", ToastLength.Long).Show();
@@ -68,12 +70,10 @@ namespace AppHotel
                 txtSenha.RequestFocus();
                 return;
             }
-
             //AQUI VAI O CÓDIGO PARA O LOGIN
             MySqlCommand cmdVerificar;
             MySqlDataReader reader;
-
-            con.AbrirCon();
+            
             cmdVerificar = new MySqlCommand("SELECT * FROM usuarios where usuario = @usuario and senha = @senha", con.con);
             cmdVerificar.Parameters.AddWithValue("@usuario", txtUser.Text);
             cmdVerificar.Parameters.AddWithValue("@senha", txtSenha.Text);

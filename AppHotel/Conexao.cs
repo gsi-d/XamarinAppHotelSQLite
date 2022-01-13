@@ -9,7 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
 namespace APPHotel
 {
@@ -17,7 +17,7 @@ namespace APPHotel
     {
 
         //CONEXAO COM O BANCO DE DADOS HOSPEDADO
-        public string conec = "SERVER=mysql746.umbler.com; DATABASE=sistemahotelerio; UID=rensid; PWD=guilherme14; PORT=41890;";
+        public string conec = "SERVER=mysql465.umbler.com; DATABASE=apphotel; UID=guilhermefelipe; PWD=guilherme14; PORT=41890;";
 
         public MySqlConnection con = null;
 
@@ -27,7 +27,7 @@ namespace APPHotel
             {
                 con = new MySqlConnection(conec);
                 con.Open();
-                //Toast.MakeText(Application.Context, "Conectado", ToastLength.Long).Show();
+                Toast.MakeText(Application.Context, "Conectado", ToastLength.Long).Show();
             }
             catch (Exception ex)
             {

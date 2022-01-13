@@ -8,7 +8,6 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\bin\Debug\com.companyname.
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\build.props
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\adb.props
-C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\AppHotel.csproj.AssemblyReference.cache
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res.flag
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\files.cache
@@ -86,7 +85,11 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\asse
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\Mono.Security.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\mscorlib.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\mscorlib.pdb
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\MySqlConnector.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\netstandard.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.AppContext.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Collections.Concurrent.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Collections.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.ComponentModel.Composition.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.ComponentModel.Composition.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Core.dll
@@ -95,6 +98,9 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\asse
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Data.DataSetExtensions.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Data.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Data.pdb
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Diagnostics.Debug.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Diagnostics.DiagnosticSource.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Diagnostics.Tracing.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Drawing.Common.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Drawing.Common.pdb
@@ -102,6 +108,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\asse
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.IO.Compression.FileSystem.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.IO.Compression.FileSystem.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.IO.Compression.pdb
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Memory.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Net.Http.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Net.Http.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Numerics.dll
@@ -109,11 +116,17 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\asse
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Numerics.Vectors.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Numerics.Vectors.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.pdb
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Reflection.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Resources.ResourceManager.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.Extensions.dll
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.InteropServices.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.Serialization.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Runtime.Serialization.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.ServiceModel.Internals.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.ServiceModel.Internals.pdb
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Threading.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Transactions.dll
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Transactions.pdb
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\assets\System.Web.Services.dll
