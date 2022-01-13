@@ -55,7 +55,14 @@
         android:layout_width="match_parent"
         android:layout_height="185.5dp"
         android:id="@+id/linearLayout4"
-        android:background="#f8f8ff"/>
+        android:background="#f8f8ff">
+        <ImageButton
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton1"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
