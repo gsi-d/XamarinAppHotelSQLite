@@ -23,7 +23,7 @@ namespace AppHotel
         double totalSaidas;
         double total;
 
-        ImageView imgUsuario, imgMov;
+        ImageView imgUsuario, imgMov, imgMovimentacoes, imgGastos, imgCheckIn, imgReservas;
         TextView txtUsuario, txtCargo, txtEntrada, txtSaida, txtTotal;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,6 +35,10 @@ namespace AppHotel
             txtUsuario = FindViewById<TextView>(Resource.Id.txtUsuario);
             txtCargo = FindViewById<TextView>(Resource.Id.txtCargo);
             imgMov = FindViewById<ImageView>(Resource.Id.imgMov);
+            imgMovimentacoes = FindViewById<ImageView>(Resource.Id.imgMovimentacoes);
+            imgGastos = FindViewById<ImageView>(Resource.Id.imgGastos);
+            imgCheckIn = FindViewById<ImageView>(Resource.Id.imgCheckIn);
+            imgReservas = FindViewById<ImageView>(Resource.Id.imgReservas);
             txtEntrada = FindViewById<TextView>(Resource.Id.txtEntrada);
             txtSaida = FindViewById<TextView>(Resource.Id.txtSaida);
             txtTotal = FindViewById<TextView>(Resource.Id.txtTotal);
@@ -44,12 +48,54 @@ namespace AppHotel
 
             imgUsuario.SetImageResource(Resource.Drawable.usuarios);
             imgMov.SetImageResource(Resource.Drawable.Movimentacao);
+            imgMovimentacoes.SetImageResource(Resource.Drawable.Movimentacao);
+            imgGastos.SetImageResource(Resource.Drawable.Gastos);
+            imgCheckIn.SetImageResource(Resource.Drawable.CheckIn);
+            imgReservas.SetImageResource(Resource.Drawable.Reservas);
+
             txtUsuario.Text = "Usuário: " + var.userLogado;
             txtCargo.Text = "Cargo: " + var.cargoUser;
+
+            imgMovimentacoes.Click += ImgMovimentacoes_Click;
+            imgGastos.Click += ImgGastos_Click;
+            imgCheckIn.Click += ImgCheckIn_Click;
+            imgReservas.Click += ImgReservas_Click;
 
             TotalizarEntradas();
             TotalizarSaidas();
             Totalizar();
+        }
+
+        private void ImgReservas_Click(object sender, EventArgs e)
+        {
+            var tela = new Intent(this, typeof(Reservas));
+            //tela.PutExtra("nome", var.userLogado);
+            //tela.PutExtra("cargo", var.cargoUser);
+            StartActivity(tela);
+        }
+
+        private void ImgCheckIn_Click(object sender, EventArgs e)
+        {
+            var tela = new Intent(this, typeof(CheckIn));
+            //tela.PutExtra("nome", var.userLogado);
+            //tela.PutExtra("cargo", var.cargoUser);
+            StartActivity(tela);
+        }
+
+        private void ImgGastos_Click(object sender, EventArgs e)
+        {
+            var tela = new Intent(this, typeof(Gastos));
+            //tela.PutExtra("nome", var.userLogado);
+            //tela.PutExtra("cargo", var.cargoUser);
+            StartActivity(tela);
+        }
+
+        private void ImgMovimentacoes_Click(object sender, EventArgs e)
+        {
+            var tela = new Intent(this, typeof(Movimentacoes));
+            //tela.PutExtra("nome", var.userLogado);
+            //tela.PutExtra("cargo", var.cargoUser);
+            StartActivity(tela);
         }
 
         private void TotalizarEntradas()

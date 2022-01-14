@@ -651,3 +651,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_Conve
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\AppHotel.csproj.AssemblyReference.cache
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\reservas.png
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\checkin.jpg
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\res\drawable\gastos.jpg
