@@ -52,6 +52,7 @@ resources;obj\Debug\110\res\values\ic_launcher_background.xml
 resources;obj\Debug\110\res\values\strings.xml
 resources;obj\Debug\110\res\values\styles.xml
 ScrollView;obj\Debug\110\res\layout\activity_main.xml
+ScrollView;obj\Debug\110\res\layout\menu.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\enterfromleft.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\enterfromright.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\exittoleft.xml

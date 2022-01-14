@@ -15,6 +15,9 @@
     </intent>
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+    <activity android:name="crc64afd14e0b086eb550.Movimentacoes" android:label="Movimentacoes" />
+    <activity android:name="crc646230de7f5e167974.CheckIn" android:label="CheckIn" />
+    <activity android:name="crc646230de7f5e167974.Gastos" android:label="Gastos" />
     <activity android:name="crc646230de7f5e167974.MainActivity" android:exported="true" android:label="@string/app_name" android:theme="@style/AppTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -22,6 +25,7 @@
       </intent-filter>
     </activity>
     <activity android:name="crc646230de7f5e167974.Menu" android:label="Menu" />
+    <activity android:name="crc646230de7f5e167974.Reservas" android:label="Reservas" />
     <service android:name="crc64396a3fe5f8138e3f.KeepAliveService" />
     <receiver android:name="crc64a0e0a82d0db9a07d.BatteryBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" />
     <receiver android:name="crc64a0e0a82d0db9a07d.EnergySaverBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" />

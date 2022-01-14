@@ -17410,22 +17410,22 @@ namespace AppHotel
 			public const int linear = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int linearLayout1 = 2131230973;
+			public const int linearLayou = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int linearLayout2 = 2131230974;
+			public const int linearLayout1 = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int linearLayout4 = 2131230975;
+			public const int linearLayout2 = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int linearLayout5 = 2131230976;
+			public const int linearLayout4 = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int linearLayout6 = 2131230977;
+			public const int linearLayout5 = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int linearLayout7 = 2131230978;
+			public const int linearLayout6 = 2131230978;
 			
 			// aapt resource value: 0x7F080103
 			public const int listMode = 2131230979;

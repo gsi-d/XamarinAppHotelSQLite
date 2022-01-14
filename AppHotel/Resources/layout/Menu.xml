@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -48,70 +49,83 @@
                 android:textColor="#00008B"/>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="185.5dp"
-        android:id="@+id/linearLayout4"
-        android:background="#f8f8ff">
-        <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="137.0dp"
-            android:layout_height="117.0dp"
-            android:id="@+id/imgMovimentacoes"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="70px"
-            android:layout_marginTop="70px"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
-        <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="137dp"
-            android:layout_height="117dp"
-            android:id="@+id/imgGastos"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="70px"
-            android:layout_marginLeft="80px"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="214.5dp"
-        android:id="@+id/linearLayout5"
-        android:background="#f8f8ff">
-        <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="137.0dp"
-            android:layout_height="117.0dp"
-            android:id="@+id/imgCheckIn"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="70px"
-            android:layout_marginBottom="70px"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
-        <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="137.0dp"
-            android:layout_height="117dp"
-            android:id="@+id/imgReservas"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="80px"
-            android:layout_marginBottom="70px"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayou"
+            android:background="#f8f8ff"
+            android:layout_gravity="center_horizontal">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/linearLayout4"
+                android:background="#f8f8ff"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="80px"
+                android:gravity="center_horizontal">
+                <ImageButton
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="155.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgMovimentacoes"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent" />
+                <ImageButton
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="155dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgGastos"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="150.0dp"
+                android:id="@+id/linearLayout5"
+                android:background="#f8f8ff"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+                <ImageButton
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="155.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgCheckIn"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent" />
+                <ImageButton
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="155.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgReservas"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="81.0dp"
+        android:layout_height="144.5dp"
         android:id="@+id/linearLayout6"
         android:background="#f8f8ff"/>
     <LinearLayout
@@ -136,10 +150,9 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/linearLayout7"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15px">
+            android:layout_height="42.5dp"
+            android:id="@+id/linearLayout6"
+            android:layout_gravity="center_vertical">
 
             <TextView
                 android:text="Entrada:"
@@ -173,5 +186,6 @@
             android:layout_marginLeft="30px"
             android:layout_marginRight="15px" />
     </LinearLayout>
-
 </LinearLayout>
+
+
