@@ -3,5 +3,83 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="296.5dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/calendarMov"
+        android:layout_marginBottom="0.0dp" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lista" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutUsuario"
+        android:background="@android:color/transparent"
+        android:gravity="bottom">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="65.0dp"
+            android:id="@+id/layoutRodape"
+            android:background="@color/switch_thumb_normal_material_light"
+            android:layout_marginTop="0.0dp">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="59.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imgMov" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout4"
+                android:gravity="center_vertical">
+                <TextView
+                    android:text="Usuário:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtEntrada"
+                    android:textSize="6pt"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="-6px" />
+                <TextView
+                    android:text="Usuário:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtSaida"
+                    android:textSize="6pt"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6px" />
+            </LinearLayout>
+            <TextView
+                android:text="Usuário:"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtTotal"
+                android:textSize="6pt"
+                android:textColor="@android:color/holo_red_dark"
+                android:gravity="center_vertical|right"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="15px" />
+        </LinearLayout>
 
+    </LinearLayout>
 </LinearLayout>

@@ -34,7 +34,7 @@ namespace APPHotel
         ArrayAdapter<string> adapter;
         ArrayAdapter<string> adapterSemDados;
 
-        /*protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -45,7 +45,7 @@ namespace APPHotel
             txtSaida = FindViewById<TextView>(Resource.Id.txtSaida);
             txtTotal = FindViewById<TextView>(Resource.Id.txtTotal);
 
-            data = FindViewById<CalendarView>(Resource.Id.data);
+            data = FindViewById<CalendarView>(Resource.Id.calendarMov);
             lista = FindViewById<ListView>(Resource.Id.lista);
 
             data.DateChange += Data_DateChange;
@@ -78,13 +78,8 @@ namespace APPHotel
             if (reader.HasRows)
             {
                 listaMov.Clear();
-
-
                 while (reader.Read())
                 {
-
-
-
                     listaMov.Add(reader["tipo"].ToString() + "   |   " + reader["movimento"].ToString() + "   |   " + reader["valor"].ToString());
                     adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, listaMov);
                     lista.Adapter = adapter;
@@ -189,10 +184,6 @@ namespace APPHotel
                 txtTotal.SetTextColor(Android.Graphics.Color.DarkGreen);
             }
 
-        }*/
-
-
-
-
+        }
     }
 }

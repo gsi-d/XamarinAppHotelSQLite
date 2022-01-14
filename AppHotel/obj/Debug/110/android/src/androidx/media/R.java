@@ -15,23 +15,23 @@ public final class R {
 	public static final class id {
 		public static final int action0 = 0x7f080030;
 		public static final int action_divider = 0x7f08003d;
-		public static final int cancel_action = 0x7f08006d;
-		public static final int chronometer = 0x7f08007c;
-		public static final int end_padder = 0x7f0800b7;
-		public static final int icon = 0x7f0800d9;
-		public static final int info = 0x7f0800ea;
-		public static final int line1 = 0x7f0800fa;
-		public static final int line3 = 0x7f0800fb;
-		public static final int media_actions = 0x7f08011f;
-		public static final int media_controller_compat_view_tag = 0x7f080120;
-		public static final int notification_main_column = 0x7f080152;
-		public static final int notification_main_column_container = 0x7f080153;
-		public static final int right_side = 0x7f080171;
-		public static final int status_bar_latest_event_content = 0x7f0801b3;
-		public static final int text = 0x7f0801cc;
-		public static final int text2 = 0x7f0801cd;
-		public static final int time = 0x7f0801dc;
-		public static final int title = 0x7f0801dd;
+		public static final int cancel_action = 0x7f08006e;
+		public static final int chronometer = 0x7f08007d;
+		public static final int end_padder = 0x7f0800b8;
+		public static final int icon = 0x7f0800da;
+		public static final int info = 0x7f0800eb;
+		public static final int line1 = 0x7f0800fc;
+		public static final int line3 = 0x7f0800fd;
+		public static final int media_actions = 0x7f080122;
+		public static final int media_controller_compat_view_tag = 0x7f080123;
+		public static final int notification_main_column = 0x7f080155;
+		public static final int notification_main_column_container = 0x7f080156;
+		public static final int right_side = 0x7f080174;
+		public static final int status_bar_latest_event_content = 0x7f0801b6;
+		public static final int text = 0x7f0801cf;
+		public static final int text2 = 0x7f0801d0;
+		public static final int time = 0x7f0801df;
+		public static final int title = 0x7f0801e0;
 	}
 	public static final class integer {
 		public static final int cancel_button_image_alpha = 0x7f090004;
