@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "W1noBy9O5QWJQ4O3d0yztC1wux15i9S4AwlLbitKvnjQqrotQrWSbL6rSxxYvNr8XbcoKqBW+ysaJbRXo846MA==",
+  "dgSpecHash": "uJE3ObRMomGFyI4+IFOP3nrkbVm0rpk7fX0PpTvZ+1NOx42KeGJEWXAtu6VCFqDE34SxIAywigH/HRR48U8Vsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj",
+  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vlnote15\\.nuget\\packages\\mono.data.sqlite.portable\\1.0.3.5\\mono.data.sqlite.portable.1.0.3.5.nupkg.sha512",
     "C:\\Users\\vlnote15\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
     "C:\\Users\\vlnote15\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\vlnote15\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",

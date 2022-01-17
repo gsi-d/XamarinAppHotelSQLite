@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v11.0": {
+      "Mono.Data.Sqlite.Portable/1.0.3.5": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Mono.Data.Sqlite",
+          "System.Data",
+          "System.Transactions"
+        ],
+        "compile": {
+          "lib/MonoAndroid/System.Data.Portable.dll": {},
+          "lib/MonoAndroid/System.Transactions.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/System.Data.Portable.dll": {},
+          "lib/MonoAndroid/System.Transactions.Portable.dll": {}
+        }
+      },
       "MySqlConnector/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -1568,6 +1584,66 @@
     }
   },
   "libraries": {
+    "Mono.Data.Sqlite.Portable/1.0.3.5": {
+      "sha512": "K9firU6nVyjwwpqr6aRJLNawao5bdRxr0AOfn/9bcwf2op02YOgCqNQ36fb9n7+O6F5spUAKky18/fBMqvXujA==",
+      "type": "package",
+      "path": "mono.data.sqlite.portable/1.0.3.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/netcore/Mono.Data.Sqlite.Portable.props",
+        "build/wp8/Mono.Data.Sqlite.Portable.props",
+        "lib/MonoAndroid/System.Data.Portable.dll",
+        "lib/MonoAndroid/System.Transactions.Portable.dll",
+        "lib/MonoTouch/System.Data.Portable.dll",
+        "lib/MonoTouch/System.Transactions.Portable.dll",
+        "lib/XamariniOS/System.Data.Portable.dll",
+        "lib/XamariniOS/System.Transactions.Portable.dll",
+        "lib/net4/Mono.Data.Sqlite.dll",
+        "lib/net4/System.Data.Portable.dll",
+        "lib/net4/System.Transactions.Portable.dll",
+        "lib/netcore/System.Data.Portable.dll",
+        "lib/netcore/System.Transactions.Portable.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/Mono.Data.Sqlite.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/System.Data.Portable.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/System.Transactions.Portable.dll",
+        "lib/sl5/Community.CsharpSqlite.Silverlight.dll",
+        "lib/sl5/Mono.Data.Sqlite.dll",
+        "lib/sl5/MonoDataSqliteWrapper.dll",
+        "lib/sl5/System.Data.Portable.dll",
+        "lib/sl5/System.Transactions.Portable.dll",
+        "lib/wp8/System.Data.Portable.dll",
+        "lib/wp8/System.Transactions.Portable.dll",
+        "mono.data.sqlite.portable.1.0.3.5.nupkg.sha512",
+        "mono.data.sqlite.portable.nuspec",
+        "tools/Mono.Data.Sqlite.Portable.targets",
+        "tools/install.ps1",
+        "tools/lib/netcore-arm/Mono.Data.Sqlite.dll",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.dll",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.lib",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.winmd",
+        "tools/lib/netcore-x86/Mono.Data.Sqlite.dll",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.dll",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.lib",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.winmd",
+        "tools/lib/wp8-arm/Mono.Data.Sqlite.dll",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.dll",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.lib",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.winmd",
+        "tools/lib/wp8-x86/Mono.Data.Sqlite.dll",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.dll",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.lib",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.winmd",
+        "tools/netcore45/install.ps1",
+        "tools/netcore45/uninstall.ps1",
+        "tools/netcore451/install.ps1",
+        "tools/netcore451/uninstall.ps1",
+        "tools/uninstall.ps1",
+        "tools/wp8/install.ps1",
+        "tools/wp8/uninstall.ps1"
+      ]
+    },
     "MySqlConnector/2.1.2": {
       "sha512": "JVokQTUNN3WHAu9Vw8ieeq1dXTFokJiig5P0VJ4f439UxRrsPo6SaVWC8Zdm6mkPeQFhZ0/9afdWa02EY/1j/w==",
       "type": "package",
@@ -3338,6 +3414,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v11.0": [
+      "Mono.Data.Sqlite.Portable >= 1.0.3.5",
       "MySqlConnector >= 2.1.2",
       "System.Data.SqlClient >= 4.8.2",
       "Xamarin.AndroidX.AppCompat >= 1.2.0.5",
@@ -3353,11 +3430,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj",
+      "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj",
       "projectName": "AppHotel",
-      "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj",
+      "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj",
       "packagesPath": "C:\\Users\\vlnote15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\obj\\",
+      "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3384,6 +3461,10 @@
     "frameworks": {
       "monoandroid11.0": {
         "dependencies": {
+          "Mono.Data.Sqlite.Portable": {
+            "target": "Package",
+            "version": "[1.0.3.5, )"
+          },
           "MySqlConnector": {
             "target": "Package",
             "version": "[2.1.2, )"

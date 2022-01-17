@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj": {}
+    "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj": {
+    "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj",
+        "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj",
         "projectName": "AppHotel",
-        "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\AppHotel.csproj",
+        "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\AppHotel.csproj",
         "packagesPath": "C:\\Users\\vlnote15\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\AppHotel\\AppHotel\\obj\\",
+        "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\XamarinAppSQLite\\AppHotel\\AppHotel\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -38,6 +38,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Mono.Data.Sqlite.Portable": {
+              "target": "Package",
+              "version": "[1.0.3.5, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.1.2, )"

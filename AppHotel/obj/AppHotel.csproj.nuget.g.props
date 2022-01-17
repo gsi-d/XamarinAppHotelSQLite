@@ -20,4 +20,7 @@
     <Import Project="C:\Program Files (x86)\Microsoft\Xamarin\NuGet\xamarin.androidx.migration\1.0.8\buildTransitive\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('C:\Program Files (x86)\Microsoft\Xamarin\NuGet\xamarin.androidx.migration\1.0.8\buildTransitive\monoandroid90\Xamarin.AndroidX.Migration.props')" />
     <Import Project="$(NuGetPackageRoot)xamarin.forms\5.0.0.2291\buildTransitive\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\5.0.0.2291\buildTransitive\Xamarin.Forms.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMono_Data_Sqlite_Portable Condition=" '$(PkgMono_Data_Sqlite_Portable)' == '' ">C:\Users\vlnote15\.nuget\packages\mono.data.sqlite.portable\1.0.3.5</PkgMono_Data_Sqlite_Portable>
+  </PropertyGroup>
 </Project>
