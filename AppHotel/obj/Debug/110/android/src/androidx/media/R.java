@@ -22,16 +22,16 @@ public final class R {
 		public static final int info = 0x7f0800ec;
 		public static final int line1 = 0x7f0800fd;
 		public static final int line3 = 0x7f0800fe;
-		public static final int media_actions = 0x7f080124;
-		public static final int media_controller_compat_view_tag = 0x7f080125;
-		public static final int notification_main_column = 0x7f080157;
-		public static final int notification_main_column_container = 0x7f080158;
-		public static final int right_side = 0x7f080176;
-		public static final int status_bar_latest_event_content = 0x7f0801b8;
-		public static final int text = 0x7f0801d1;
-		public static final int text2 = 0x7f0801d2;
-		public static final int time = 0x7f0801e2;
-		public static final int title = 0x7f0801e3;
+		public static final int media_actions = 0x7f080123;
+		public static final int media_controller_compat_view_tag = 0x7f080124;
+		public static final int notification_main_column = 0x7f080156;
+		public static final int notification_main_column_container = 0x7f080157;
+		public static final int right_side = 0x7f080175;
+		public static final int status_bar_latest_event_content = 0x7f0801b7;
+		public static final int text = 0x7f0801d0;
+		public static final int text2 = 0x7f0801d1;
+		public static final int time = 0x7f0801e1;
+		public static final int title = 0x7f0801e2;
 	}
 	public static final class integer {
 		public static final int cancel_button_image_alpha = 0x7f090004;
