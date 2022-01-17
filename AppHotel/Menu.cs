@@ -43,7 +43,7 @@ namespace AppHotel
             txtSaida = FindViewById<TextView>(Resource.Id.txtSaida);
             txtTotal = FindViewById<TextView>(Resource.Id.txtTotal);
 
-            var.userLogado = Intent.GetStringExtra("user");
+            var.userLogado = Intent.GetStringExtra("nome");
             var.cargoUser = Intent.GetStringExtra("cargo");
 
             imgUsuario.SetImageResource(Resource.Drawable.usuarios);
@@ -85,8 +85,8 @@ namespace AppHotel
         private void ImgGastos_Click(object sender, EventArgs e)
         {
             var tela = new Intent(this, typeof(Gastos));
-            //tela.PutExtra("nome", var.userLogado);
-            //tela.PutExtra("cargo", var.cargoUser);
+            tela.PutExtra("nome", var.userLogado);
+            tela.PutExtra("cargo", var.cargoUser);
             StartActivity(tela);
         }
 

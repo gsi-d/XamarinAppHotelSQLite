@@ -26,6 +26,7 @@ namespace APPHotel
         double total;
 
         CalendarView data;
+        ImageView imgMov;
         ListView lista;
         TextView txtEntrada, txtSaida, txtTotal;
 
@@ -44,9 +45,12 @@ namespace APPHotel
             txtEntrada = FindViewById<TextView>(Resource.Id.txtEntrada);
             txtSaida = FindViewById<TextView>(Resource.Id.txtSaida);
             txtTotal = FindViewById<TextView>(Resource.Id.txtTotal);
+            imgMov = FindViewById<ImageView>(Resource.Id.imgMov);
 
             data = FindViewById<CalendarView>(Resource.Id.calendarMov);
             lista = FindViewById<ListView>(Resource.Id.lista);
+
+            imgMov.SetImageResource(Resource.Drawable.Movimentacao);
 
             data.DateChange += Data_DateChange;
             dataRecuperada = DateTime.Today.ToString();

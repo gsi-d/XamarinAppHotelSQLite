@@ -13,6 +13,7 @@ attr;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\j
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
+Button;obj\Debug\110\res\layout\gastos.xml
 cache-path;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 CalendarView;obj\Debug\110\res\layout\movimentacoes.xml
 color;obj\Debug\110\res\values\colors.xml
@@ -26,6 +27,7 @@ com.google.android.material.tabs.TabLayout;C:\Users\vlnote15\Desktop\Guilherme\A
 com.google.android.material.tabs.TabLayout;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\layout\tabbar.xml
 declare-styleable;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\values\attrs.xml
 EditText;obj\Debug\110\res\layout\activity_main.xml
+EditText;obj\Debug\110\res\layout\gastos.xml
 external-cache-path;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
@@ -44,6 +46,7 @@ LinearLayout;obj\Debug\110\res\layout\gastos.xml
 LinearLayout;obj\Debug\110\res\layout\menu.xml
 LinearLayout;obj\Debug\110\res\layout\movimentacoes.xml
 LinearLayout;obj\Debug\110\res\layout\reservas.xml
+ListView;obj\Debug\110\res\layout\gastos.xml
 ListView;obj\Debug\110\res\layout\movimentacoes.xml
 paths;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\110\res\layout\activity_main.xml
@@ -64,6 +67,7 @@ string;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54
 string;obj\Debug\110\res\values\strings.xml
 style;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\values\styles.xml
 style;obj\Debug\110\res\values\styles.xml
+TextView;obj\Debug\110\res\layout\gastos.xml
 TextView;obj\Debug\110\res\layout\menu.xml
 TextView;obj\Debug\110\res\layout\movimentacoes.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\lp\54\jl\res\anim\enterfromleft.xml

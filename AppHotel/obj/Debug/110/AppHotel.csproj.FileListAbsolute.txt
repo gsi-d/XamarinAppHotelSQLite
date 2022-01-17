@@ -502,7 +502,6 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc643f46942d9dd1fff9\WebViewRenderer.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc643f46942d9dd1fff9\WebViewRenderer_JavascriptResult.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc646230de7f5e167974\CheckIn.java
-C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc646230de7f5e167974\Gastos.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc646230de7f5e167974\MainActivity.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc646230de7f5e167974\Menu.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc646230de7f5e167974\Reservas.java
@@ -545,6 +544,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\RectEvaluator.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils_MatrixEvaluator.java
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64afd14e0b086eb550\Gastos.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64afd14e0b086eb550\Movimentacoes.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64ee486da937c010f4\ButtonRenderer.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\crc64ee486da937c010f4\FrameRenderer.java
@@ -634,6 +634,7 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\xamarin\essentials\fileProvider.java
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\bin\packaged_resources
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\src\com\companyname\apphotel\R.java
+C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\AppHotel.csproj.AssemblyReference.cache
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\compressed_assemblies.arm64-v8a.s
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\compressed_assemblies.armeabi-v7a.s
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\android\compressed_assemblies.x86.s
@@ -662,4 +663,3 @@ C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_Conve
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\vlnote15\Desktop\Guilherme\AppHotel\AppHotel\obj\Debug\110\AppHotel.csproj.AssemblyReference.cache
