@@ -1,9 +1,21 @@
+APPHotel.Gastos, AppHotel;crc64afd14e0b086eb550.Gastos
+APPHotel.Gastos;crc64afd14e0b086eb550.Gastos
+apphotel.Gastos;crc64afd14e0b086eb550.Gastos
+APPHotel.Movimentacoes, AppHotel;crc64afd14e0b086eb550.Movimentacoes
+APPHotel.Movimentacoes;crc64afd14e0b086eb550.Movimentacoes
+apphotel.Movimentacoes;crc64afd14e0b086eb550.Movimentacoes
+AppHotel.CheckIn, AppHotel;crc646230de7f5e167974.CheckIn
+AppHotel.CheckIn;crc646230de7f5e167974.CheckIn
+apphotel.CheckIn;crc646230de7f5e167974.CheckIn
 AppHotel.MainActivity, AppHotel;crc646230de7f5e167974.MainActivity
 AppHotel.MainActivity;crc646230de7f5e167974.MainActivity
 apphotel.MainActivity;crc646230de7f5e167974.MainActivity
 AppHotel.Menu, AppHotel;crc646230de7f5e167974.Menu
 AppHotel.Menu;crc646230de7f5e167974.Menu
 apphotel.Menu;crc646230de7f5e167974.Menu
+AppHotel.Reservas, AppHotel;crc646230de7f5e167974.Reservas
+AppHotel.Reservas;crc646230de7f5e167974.Reservas
+apphotel.Reservas;crc646230de7f5e167974.Reservas
 AndroidX.Activity.IOnBackPressedDispatcherOwner, Xamarin.AndroidX.Activity;androidx.activity.OnBackPressedDispatcherOwner
 AndroidX.Activity.IOnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
 androidx.activity.OnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
