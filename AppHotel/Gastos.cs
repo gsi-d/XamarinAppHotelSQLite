@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AppHotel;
+using Mono.Data.Sqlite;
 using MySqlConnector;
 
 namespace APPHotel
@@ -17,14 +18,16 @@ namespace APPHotel
     [Activity(Label = "Gastos")]
     public class Gastos : Activity
     {
-        Conexao con = new Conexao();
+        //Conexao con = new Conexao();
         Variaveis var = new Variaveis();
 
+        string ultimoIdGasto;   
+       
         EditText txtGasto, txtValor;
         ListView lista;
         Button btnSalvar;
 
-        string ultimoIdGasto;
+        
 
         List<string> listaGasto = new List<string>();
         ArrayAdapter<string> adapter;
@@ -35,6 +38,9 @@ namespace APPHotel
             // Create your application here
             SetContentView(Resource.Layout.Gastos);
             var.userLogado = Intent.GetStringExtra("nome");
+            var.base_dados = Intent.GetStringExtra("conexao");
+
+            
 
             txtGasto = FindViewById<EditText>(Resource.Id.txtGasto);
             txtValor = FindViewById<EditText>(Resource.Id.txtValor);
@@ -48,16 +54,21 @@ namespace APPHotel
 
         private void Listar()
         {
-            string sql;
+            /*string sql;
             MySqlCommand cmd;
             MySqlDataReader reader;
-            con.AbrirCon();
+            con.AbrirCon();*/
 
+            SqliteConnection con = new SqliteConnection("Data Source = " + var.base_dados + "; Version = 3");
+            con.Open();
 
-            sql = "SELECT * FROM gastos where data = curDate()";
-            cmd = new MySqlCommand(sql, con.con);
+            SqliteCommand command = new SqliteCommand(con);
+            SqliteDataReader reader;
+
+            command.CommandText = "SELECT * FROM gastos where data = curDate()";
+            command.ExecuteNonQuery();
             //cmd.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
-            reader = cmd.ExecuteReader();
+            reader = command.ExecuteReader();
 
 
 
@@ -68,42 +79,35 @@ namespace APPHotel
 
                 while (reader.Read())
                 {
-
-
-
                     listaGasto.Add(reader["descricao"].ToString() + "   |   " + reader["valor"].ToString());
                     adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, listaGasto);
                     lista.Adapter = adapter;
                 }
             }
-
-
-            con.FecharCon();
+            con.Close();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            string sql;
-            MySqlCommand cmd;
+            SqliteConnection con = new SqliteConnection("Data Source = " + var.base_dados + "; Version = 3");
+            SqliteCommand command = new SqliteCommand(con);
 
-            con.AbrirCon();
+            con.Open();
 
-
-            sql = "INSERT INTO gastos (descricao, valor, funcionario, data) VALUES (@descricao, @valor, @funcionario, curDate())";
-            cmd = new MySqlCommand(sql, con.con);
-            cmd.Parameters.AddWithValue("@descricao", txtGasto.Text);
-            cmd.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text));
-            cmd.Parameters.AddWithValue("@funcionario", var.userLogado);
-            cmd.ExecuteNonQuery();
+            command.CommandText = "INSERT INTO gastos (descricao, valor, funcionario, data) VALUES (@descricao, @valor, @funcionario, curDate())";
+            
+            command.Parameters.AddWithValue("@descricao", txtGasto.Text);
+            command.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text));
+            command.Parameters.AddWithValue("@funcionario", var.userLogado);
+            command.ExecuteNonQuery();
 
 
             //RECUPERAR O ULTIMO ID DO GASTO
-            MySqlCommand cmdVerificar;
-            MySqlDataReader reader;
-            con.AbrirCon();
-            cmdVerificar = new MySqlCommand("SELECT id FROM gastos order by id desc LIMIT 1", con.con);
+            SqliteDataReader reader;
+            con.Open();
+            command.CommandText = "SELECT id FROM gastos order by id desc LIMIT 1)";
 
-            reader = cmdVerificar.ExecuteReader();
+            reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
@@ -111,30 +115,21 @@ namespace APPHotel
                 while (reader.Read())
                 {
                     ultimoIdGasto = Convert.ToString(reader["id"]);
-
-
                 }
             }
 
-
-
-
             //LANÇAR O GASTO NAS MOVIMENTAÇÕES
-            con.AbrirCon();
-            sql = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, curDate(), @id_movimento)";
-            cmd = new MySqlCommand(sql, con.con);
+            con.Open();
+            command.CommandText = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, curDate(), @id_movimento)";
 
-            cmd.Parameters.AddWithValue("@tipo", "Saída");
-            cmd.Parameters.AddWithValue("@movimento", "Gasto");
-            cmd.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text));
-            cmd.Parameters.AddWithValue("@funcionario", var.userLogado);
-            cmd.Parameters.AddWithValue("@id_movimento", ultimoIdGasto);
+            command.Parameters.AddWithValue("@tipo", "Saída");
+            command.Parameters.AddWithValue("@movimento", "Gasto");
+            command.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text));
+            command.Parameters.AddWithValue("@funcionario", var.userLogado);
+            command.Parameters.AddWithValue("@id_movimento", ultimoIdGasto);
 
-
-            cmd.ExecuteNonQuery();
-            con.FecharCon();
-
-
+            command.ExecuteNonQuery();
+            con.Close();
 
             Listar();
             Toast.MakeText(Application.Context, "Salvo com Sucesso!!", ToastLength.Long).Show();

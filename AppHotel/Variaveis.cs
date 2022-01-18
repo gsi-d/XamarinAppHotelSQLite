@@ -15,6 +15,7 @@ namespace AppHotel
     {
         public string userLogado;
         public string cargoUser;
+        public string base_dados;
 
         public double entrada;
         public double saida;
