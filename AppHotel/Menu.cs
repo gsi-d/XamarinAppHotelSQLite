@@ -98,6 +98,7 @@ namespace AppHotel
             var tela = new Intent(this, typeof(Movimentacoes));
             //tela.PutExtra("nome", var.userLogado);
             //tela.PutExtra("cargo", var.cargoUser);
+            tela.PutExtra("conexao", base_dados);
             StartActivity(tela);
         }
 

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AppHotel;
+using Mono.Data.Sqlite;
 using MySqlConnector;
 
 namespace APPHotel
@@ -18,7 +19,7 @@ namespace APPHotel
     public class Movimentacoes : Activity
     {
 
-        Conexao con = new Conexao();
+        //Conexao con = new Conexao();
         Variaveis var = new Variaveis();
 
         double totalEntradas;
@@ -30,7 +31,7 @@ namespace APPHotel
         ListView lista;
         TextView txtEntrada, txtSaida, txtTotal;
 
-        string dataRecuperada;
+        string dataRecuperada, base_dados;
         List<string> listaMov = new List<string>();
         ArrayAdapter<string> adapter;
         ArrayAdapter<string> adapterSemDados;
@@ -66,16 +67,17 @@ namespace APPHotel
 
         private void BuscarData()
         {
-            string sql;
-            MySqlCommand cmd;
-            MySqlDataReader reader;
-            con.AbrirCon();
+            base_dados = Intent.GetStringExtra("conexao");
+            SqliteConnection con = new SqliteConnection("Data Source = " + base_dados + "; Version = 3");
+            con.Open();
+
+            SqliteCommand command = new SqliteCommand(con);
+            SqliteDataReader reader;
 
 
-            sql = "SELECT * FROM movimentacoes where data = @data";
-            cmd = new MySqlCommand(sql, con.con);
-            cmd.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
-            reader = cmd.ExecuteReader();
+            command.CommandText = "SELECT * FROM movimentacoes where data = @data";
+            command.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
+            reader = command.ExecuteReader();
 
 
             lista.Adapter = adapterSemDados;
@@ -91,7 +93,7 @@ namespace APPHotel
             }
 
 
-            con.FecharCon();
+            con.Close();
 
             TotalizarEntradas();
             TotalizarSaidas();
@@ -101,25 +103,23 @@ namespace APPHotel
 
         private void TotalizarEntradas()
         {
-            MySqlCommand cmdVerificar;
-            MySqlDataReader reader;
+            base_dados = Intent.GetStringExtra("conexao");
+            SqliteConnection con = new SqliteConnection("Data Source = " + base_dados + "; Version = 3");
+            con.Open();
 
-            con.AbrirCon();
-            cmdVerificar = new MySqlCommand("SELECT id, sum(valor) as valor_total FROM movimentacoes where data = @data and tipo = @tipo", con.con);
-            cmdVerificar.Parameters.AddWithValue("@tipo", "Entrada");
-            cmdVerificar.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
-            reader = cmdVerificar.ExecuteReader();
+            SqliteCommand command = new SqliteCommand(con);
+            SqliteDataReader reader;
+
+            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = @data and tipo = @tipo";
+            command.Parameters.AddWithValue("@tipo", "Entrada");
+            command.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
+            reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
-
-
-
                 while (reader.Read())
                 {
-
                     //RECUPERAR OS DADOS DO USUÁRIO
-
                     if (reader["valor_total"].ToString() == "")
                     {
                         totalEntradas = 0;
@@ -128,34 +128,31 @@ namespace APPHotel
                     {
                         totalEntradas = Convert.ToDouble(reader["valor_total"]);
                     }
-
-
                     txtEntrada.Text = "Entradas " + totalEntradas.ToString("C2");
-
-
                 }
             }
-            con.FecharCon();
+            con.Close();
 
         }
         private void TotalizarSaidas()
         {
-            MySqlCommand cmdVerificar;
-            MySqlDataReader reader;
+            base_dados = Intent.GetStringExtra("conexao");
+            SqliteConnection con = new SqliteConnection("Data Source = " + base_dados + "; Version = 3");
+            con.Open();
 
-            con.AbrirCon();
-            cmdVerificar = new MySqlCommand("SELECT id, sum(valor) as valor_total FROM movimentacoes where data = @data and tipo = @tipo", con.con);
-            cmdVerificar.Parameters.AddWithValue("@tipo", "Saída");
-            cmdVerificar.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
-            reader = cmdVerificar.ExecuteReader();
+            SqliteCommand command = new SqliteCommand(con);
+            SqliteDataReader reader;
+
+            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = @data and tipo = @tipo";
+            command.Parameters.AddWithValue("@tipo", "Saída");
+            command.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
+            reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
-
                 while (reader.Read())
                 {
                     //RECUPERAR OS DADOS DO USUÁRIO
-
                     if (reader["valor_total"].ToString() == "")
                     {
                         totalSaidas = 0;
@@ -164,14 +161,10 @@ namespace APPHotel
                     {
                         totalSaidas = Convert.ToDouble(reader["valor_total"]);
                     }
-
-
                     txtSaida.Text = "Saídas " + totalSaidas.ToString("C2");
-
-
                 }
             }
-            con.FecharCon();
+            con.Close();
         }
 
         private void Totalizar()
