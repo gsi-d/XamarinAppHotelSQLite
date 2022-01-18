@@ -4,7 +4,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AppHotel.Resources;
 using APPHotel;
 using MySqlConnector;
 using System;
@@ -19,9 +18,8 @@ namespace AppHotel
     {
 
         string pasta_dados;
-        string base_dados = "storage/emulated/0/Android/data/com.companyname.apphotel/files/PASTA_DADOS";
+        string base_dados; //= "storage/emulated/0/Android/data/com.companyname.apphotel/files/PASTA_DADOS";
 
-        public List<Login> logins = new List<Login>();
         Variaveis var = new Variaveis();
         //Conexao con = new Conexao();
 
@@ -54,7 +52,7 @@ namespace AppHotel
             {
                 Directory.CreateDirectory(pasta_dados);
             }
-            var.base_dados = Path.Combine(pasta_dados, "base_dados.db");
+            base_dados = Path.Combine(pasta_dados, "base_dados.db");
 
             if (!File.Exists(base_dados))
             {
@@ -65,12 +63,12 @@ namespace AppHotel
 
                 SqliteCommand command = new SqliteCommand(con);
                 command.CommandText = "CREATE TABLE cargos(" +
-                                      "id INT NOT NULL PRIMARY KEY," +
+                                      "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                                       "cargo NVARCHAR(50) NOT NULL)";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE detalhes_venda(" +
-                                        "id int NOT NULL PRIMARY KEY," +
+                                        "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                                         "id_venda INT NOT NULL," +
                                         "produto varchar NOT NULL," +
                                         "quantidade int NOT NULL," +
@@ -81,14 +79,14 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE fornecedores(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(40) NOT NULL," +
                   "endereco varchar(50) NOT NULL," +
                   "telefone varchar(20) NOT NULL)";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE funcionarios(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(40) NOT NULL," +
                   "cpf varchar(20) NOT NULL," +
                   "endereco varchar(80) NOT NULL," +
@@ -98,7 +96,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE gastos(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "descricao varchar(60) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
@@ -106,7 +104,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE hospedes(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(30) NOT NULL," +
                   "cpf varchar(20) NOT NULL," +
                   "endereco varchar(50) NOT NULL," +
@@ -116,7 +114,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE movimentacoes(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "tipo varchar(15) NOT NULL," +
                   "movimento varchar(25) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL," +
@@ -126,7 +124,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE novo_servico(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "hospede varchar(25) NOT NULL," +
                   "servico varchar(25) NOT NULL," +
                   "quarto varchar(10) NOT NULL," +
@@ -136,7 +134,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE ocupacoes(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "quarto varchar(5) NOT NULL," +
                   "data date NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
@@ -144,7 +142,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE produtos(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(40) NOT NULL," +
                   "descricao varchar(80) NOT NULL," +
                   "estoque int NOT NULL DEFAULT '0'," +
@@ -155,7 +153,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE reservas(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "quarto varchar(5) NOT NULL," +
                   "entrada date NOT NULL," +
                   "saida date NOT NULL," +
@@ -172,20 +170,20 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE quartos(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "quarto varchar(5) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL," +
                   "pessoas varchar(3) NOT NULL)";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE  servicos(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(40) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL)";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE usuarios(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "nome varchar(30) NOT NULL," +
                   "cargo varchar(30) NOT NULL," +
                   "usuario varchar(30) NOT NULL," +
@@ -194,7 +192,7 @@ namespace AppHotel
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE vendas(" +
-                  "id int NOT NULL PRIMARY KEY," +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                   "valor_total decimal(10, 2) NOT NULL," +
                   "funcionario varchar(40) NOT NULL," +
                   "status varchar(25) NOT NULL DEFAULT 'Efetuada'," +

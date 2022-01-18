@@ -89,6 +89,7 @@ namespace AppHotel
             var tela = new Intent(this, typeof(Gastos));
             tela.PutExtra("nome", var.userLogado);
             tela.PutExtra("cargo", var.cargoUser);
+            tela.PutExtra("conexao", base_dados);
             StartActivity(tela);
         }
 
@@ -108,11 +109,12 @@ namespace AppHotel
 
             SqliteCommand command = new SqliteCommand(con);
             SqliteDataReader reader;
-
-            con.Open();
-            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = curDate() and tipo = @tipo";
+            DateTime date = DateTime.Today;
+            
+            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = date('now') and tipo = @tipo";
+            //command.Parameters.AddWithValue("@data", date);
             command.Parameters.AddWithValue("@tipo", "Entrada");
-
+            
             reader = command.ExecuteReader();
 
             if (reader.HasRows)
@@ -144,8 +146,7 @@ namespace AppHotel
             SqliteCommand command = new SqliteCommand(con);
             SqliteDataReader reader;
 
-            con.Open();
-            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = curDate() and tipo = @tipo";
+            command.CommandText = "SELECT id, sum(valor) as valor_total FROM movimentacoes where data = date('now') and tipo = @tipo";
             command.Parameters.AddWithValue("@tipo", "Saída");
 
             reader = command.ExecuteReader();
@@ -165,8 +166,6 @@ namespace AppHotel
                         totalSaidas = Convert.ToDouble(reader["valor_total"]);
                     }
                     txtSaida.Text = "Saídas " + totalSaidas.ToString("C2");
-
-
                 }
             }
             con.Close();

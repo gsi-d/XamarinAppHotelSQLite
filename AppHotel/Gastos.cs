@@ -21,13 +21,11 @@ namespace APPHotel
         //Conexao con = new Conexao();
         Variaveis var = new Variaveis();
 
-        string ultimoIdGasto;   
+        string ultimoIdGasto, base_dados;   
        
         EditText txtGasto, txtValor;
         ListView lista;
         Button btnSalvar;
-
-        
 
         List<string> listaGasto = new List<string>();
         ArrayAdapter<string> adapter;
@@ -38,10 +36,7 @@ namespace APPHotel
             // Create your application here
             SetContentView(Resource.Layout.Gastos);
             var.userLogado = Intent.GetStringExtra("nome");
-            var.base_dados = Intent.GetStringExtra("conexao");
-
-            
-
+           
             txtGasto = FindViewById<EditText>(Resource.Id.txtGasto);
             txtValor = FindViewById<EditText>(Resource.Id.txtValor);
 
@@ -54,18 +49,14 @@ namespace APPHotel
 
         private void Listar()
         {
-            /*string sql;
-            MySqlCommand cmd;
-            MySqlDataReader reader;
-            con.AbrirCon();*/
-
-            SqliteConnection con = new SqliteConnection("Data Source = " + var.base_dados + "; Version = 3");
+            base_dados = Intent.GetStringExtra("conexao");
+            SqliteConnection con = new SqliteConnection("Data Source = " + base_dados);
             con.Open();
 
             SqliteCommand command = new SqliteCommand(con);
             SqliteDataReader reader;
 
-            command.CommandText = "SELECT * FROM gastos where data = curDate()";
+            command.CommandText = "SELECT * FROM gastos where data = date('now')";
             command.ExecuteNonQuery();
             //cmd.Parameters.AddWithValue("@data", Convert.ToDateTime(dataRecuperada));
             reader = command.ExecuteReader();
@@ -75,8 +66,6 @@ namespace APPHotel
             if (reader.HasRows)
             {
                 listaGasto.Clear();
-
-
                 while (reader.Read())
                 {
                     listaGasto.Add(reader["descricao"].ToString() + "   |   " + reader["valor"].ToString());
@@ -89,12 +78,13 @@ namespace APPHotel
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            SqliteConnection con = new SqliteConnection("Data Source = " + var.base_dados + "; Version = 3");
+            base_dados = Intent.GetStringExtra("conexao");
+            SqliteConnection con = new SqliteConnection("Data Source = " + base_dados + "; Version = 3");
             SqliteCommand command = new SqliteCommand(con);
 
             con.Open();
 
-            command.CommandText = "INSERT INTO gastos (descricao, valor, funcionario, data) VALUES (@descricao, @valor, @funcionario, curDate())";
+            command.CommandText = "INSERT INTO gastos (descricao, valor, funcionario, data) VALUES (@descricao, @valor, @funcionario, date('now'))";
             
             command.Parameters.AddWithValue("@descricao", txtGasto.Text);
             command.Parameters.AddWithValue("@valor", Convert.ToDouble(txtValor.Text));
@@ -103,9 +93,8 @@ namespace APPHotel
 
 
             //RECUPERAR O ULTIMO ID DO GASTO
-            SqliteDataReader reader;
-            con.Open();
-            command.CommandText = "SELECT id FROM gastos order by id desc LIMIT 1)";
+            SqliteDataReader reader; 
+            command.CommandText = "SELECT id FROM gastos order by id desc LIMIT 1";
 
             reader = command.ExecuteReader();
 
@@ -117,10 +106,9 @@ namespace APPHotel
                     ultimoIdGasto = Convert.ToString(reader["id"]);
                 }
             }
-
+            reader.Close();
             //LANÇAR O GASTO NAS MOVIMENTAÇÕES
-            con.Open();
-            command.CommandText = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, curDate(), @id_movimento)";
+            command.CommandText = "INSERT INTO movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES (@tipo, @movimento, @valor, @funcionario, date('now'), @id_movimento)";
 
             command.Parameters.AddWithValue("@tipo", "Saída");
             command.Parameters.AddWithValue("@movimento", "Gasto");
