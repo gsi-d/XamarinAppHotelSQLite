@@ -75,7 +75,8 @@ namespace AppHotel
                                         "valor_unitario decimal(10, 2) NOT NULL," +
                                         "valor_total decimal(10, 2) NOT NULL," +
                                         "funcionario varchar NOT NULL," +
-                                        "id_produto int NOT NULL)";
+                                        "id_produto int NOT NULL," +
+                                        "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE fornecedores(" +
@@ -92,7 +93,8 @@ namespace AppHotel
                   "endereco varchar(80) NOT NULL," +
                   "telefone varchar(20) NOT NULL," +
                   "cargo varchar(30) NOT NULL," +
-                  "data date NOT NULL)";
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (cargo) REFERENCES cargos (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE gastos(" +
@@ -100,7 +102,8 @@ namespace AppHotel
                   "descricao varchar(60) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
-                  "data date NOT NULL)";
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE hospedes(" +
@@ -110,7 +113,8 @@ namespace AppHotel
                   "endereco varchar(50) NOT NULL," +
                   "telefone varchar(20) NOT NULL," +
                   "funcionario varchar(30) NOT NULL," +
-                  "data date NOT NULL)";
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE movimentacoes(" +
@@ -120,7 +124,8 @@ namespace AppHotel
                   "valor decimal(10, 2) NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
                   "data date NOT NULL," +
-                  "id_movimento int NOT NULL)";
+                  "id_movimento int NOT NULL," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE novo_servico(" +
@@ -130,7 +135,10 @@ namespace AppHotel
                   "quarto varchar(10) NOT NULL," +
                   "valor decimal(10, 2) NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
-                  "data date NOT NULL)";
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id)," +
+                  "FOREIGN KEY (servico) REFERENCES servicos (id)," +
+                  "FOREIGN KEY (quarto) REFERENCES quartos (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE ocupacoes(" +
@@ -138,18 +146,10 @@ namespace AppHotel
                   "quarto varchar(5) NOT NULL," +
                   "data date NOT NULL," +
                   "funcionario varchar(25) NOT NULL," +
-                  "id_reserva varchar(5) NOT NULL DEFAULT '0')";
-                command.ExecuteNonQuery();
-
-                command.CommandText = "CREATE TABLE produtos(" +
-                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                  "nome varchar(40) NOT NULL," +
-                  "descricao varchar(80) NOT NULL," +
-                  "estoque int NOT NULL DEFAULT '0'," +
-                  "fornecedor int NOT NULL," +
-                  "valor_venda decimal(10, 2) NOT NULL," +
-                  "valor_compra decimal(10, 2) NOT NULL DEFAULT '0.00'," +
-                  "data date NOT NULL)";
+                  "id_reserva varchar(5) NOT NULL DEFAULT '0'," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id)," +
+                  "FOREIGN KEY (id_reserva) REFERENCES reservas (id)," +
+                  "FOREIGN KEY (quarto) REFERENCES quartos (id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE reservas(" +
@@ -166,7 +166,9 @@ namespace AppHotel
                   "status varchar(15) NOT NULL DEFAULT 'Confirmada'," +
                   "checkin varchar(5) NOT NULL DEFAULT 'Não'," +
                   "checkout varchar(5) NOT NULL DEFAULT 'Não'," +
-                  "pago varchar(5) NOT NULL DEFAULT 'Não')";
+                  "pago varchar(5) NOT NULL DEFAULT 'Não'," +
+                  "FOREIGN KEY (quarto) REFERENCES quartos (id)," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";      
                 command.ExecuteNonQuery();
 
                 command.CommandText = "CREATE TABLE quartos(" +
@@ -196,7 +198,20 @@ namespace AppHotel
                   "valor_total decimal(10, 2) NOT NULL," +
                   "funcionario varchar(40) NOT NULL," +
                   "status varchar(25) NOT NULL DEFAULT 'Efetuada'," +
-                  "data date NOT NULL)";
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (funcionario) REFERENCES funcionarios (id))";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "CREATE TABLE produtos(" +
+                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                  "nome varchar(40) NOT NULL," +
+                  "descricao varchar(80) NOT NULL," +
+                  "estoque int NOT NULL DEFAULT '0'," +
+                  "fornecedor int NOT NULL," +
+                  "valor_venda decimal(10, 2) NOT NULL," +
+                  "valor_compra decimal(10, 2) NOT NULL DEFAULT '0.00'," +
+                  "data date NOT NULL," +
+                  "FOREIGN KEY (fornecedor) REFERENCES fornecedores(id))";
                 command.ExecuteNonQuery();
 
                 command.CommandText =
@@ -356,14 +371,14 @@ namespace AppHotel
                 "(20, 40.00, 'Hugo Freitas', 'Efetuada', '2019-05-21 00:00:00')";
                 command.ExecuteNonQuery();
 
-                command.CommandText = "INSERT INTO produtos(id, nome, descricao, estoque, fornecedor, valor_venda, valor_compra, data) VALUES" +
-                "(1, 'Refrigerante Lata', 'Lata 350 ML', 23, 2, 5.50, 2.00, '2019-05-07 00:00:00'," +
-                "(2, 'Cerveja Lata', 'Lata 350 ML', 31, 2, 8.00, 2.00, '2019-05-07 00:00:00'," +
-                "(3, 'Chocolate Barra', 'Barra 175 Gramas', 20, 2, 9.00, 3.00, '2019-05-08 00:00:00'," +
-                "(4, 'Agua Mineral', 'Garrafa 200 ML', 24, 2, 5.00, 3.00, '2019-05-08 00:00:00'," +
-                "(5, 'Cereal Barra', 'Barra Cereal 80 G', 21, 2, 4.00, 1.50, '2019-05-08 00:00:00'," +
-                "(6, 'Suco Caixinha', 'Caixa 200 ML', 15, 2, 5.00, 2.00, '2019-05-08 00:00:00'," +
-                "(8, 'Suco Lata', 'Lata 350 ML', 20, 1, 6.00, 2.00, '2019-05-08 00:00:00')";
+                command.CommandText = "INSERT INTO produtos(nome, descricao, estoque, fornecedor, valor_venda, valor_compra, data) VALUES" +
+                "('Refrigerante Lata', 'Lata 350 ML', 23, 2, 5.50, 2.00, '2019-05-07 00:00:00'," +
+                "('Cerveja Lata', 'Lata 350 ML', 31, 2, 8.00, 2.00, '2019-05-07 00:00:00'," +
+                "('Chocolate Barra', 'Barra 175 Gramas', 20, 2, 9.00, 3.00, '2019-05-08 00:00:00'," +
+                "('Agua Mineral', 'Garrafa 200 ML', 24, 2, 5.00, 3.00, '2019-05-08 00:00:00'," +
+                "('Cereal Barra', 'Barra Cereal 80 G', 21, 2, 4.00, 1.50, '2019-05-08 00:00:00'," +
+                "('Suco Caixinha', 'Caixa 200 ML', 15, 2, 5.00, 2.00, '2019-05-08 00:00:00'," +
+                "('Suco Lata', 'Lata 350 ML', 20, 1, 6.00, 2.00, '2019-05-08 00:00:00')";
                 command.ExecuteNonQuery();
 
                 con.Close();

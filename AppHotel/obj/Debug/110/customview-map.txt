@@ -14,8 +14,10 @@ background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_main.xml
 Button;obj\Debug\110\res\layout\gastos.xml
+Button;obj\Debug\110\res\layout\reservas.xml
 cache-path;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 CalendarView;obj\Debug\110\res\layout\movimentacoes.xml
+CalendarView;obj\Debug\110\res\layout\reservas.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\layout\flyoutcontent.xml
@@ -28,6 +30,7 @@ com.google.android.material.tabs.TabLayout;C:\Users\vlnote15\Desktop\Guilherme\X
 declare-styleable;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\values\attrs.xml
 EditText;obj\Debug\110\res\layout\activity_main.xml
 EditText;obj\Debug\110\res\layout\gastos.xml
+EditText;obj\Debug\110\res\layout\reservas.xml
 external-cache-path;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
@@ -48,6 +51,7 @@ LinearLayout;obj\Debug\110\res\layout\movimentacoes.xml
 LinearLayout;obj\Debug\110\res\layout\reservas.xml
 ListView;obj\Debug\110\res\layout\gastos.xml
 ListView;obj\Debug\110\res\layout\movimentacoes.xml
+ListView;obj\Debug\110\res\layout\reservas.xml
 paths;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\110\res\layout\activity_main.xml
 resources;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\values\attrs.xml
@@ -59,6 +63,7 @@ resources;obj\Debug\110\res\values\strings.xml
 resources;obj\Debug\110\res\values\styles.xml
 ScrollView;obj\Debug\110\res\layout\activity_main.xml
 ScrollView;obj\Debug\110\res\layout\menu.xml
+ScrollView;obj\Debug\110\res\layout\reservas.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\enterfromleft.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\enterfromright.xml
 set;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\exittoleft.xml
@@ -70,6 +75,7 @@ style;obj\Debug\110\res\values\styles.xml
 TextView;obj\Debug\110\res\layout\gastos.xml
 TextView;obj\Debug\110\res\layout\menu.xml
 TextView;obj\Debug\110\res\layout\movimentacoes.xml
+TextView;obj\Debug\110\res\layout\reservas.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\enterfromleft.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\enterfromright.xml
 translate;C:\Users\vlnote15\Desktop\Guilherme\XamarinAppSQLite\AppHotel\AppHotel\obj\Debug\110\lp\56\jl\res\anim\exittoleft.xml

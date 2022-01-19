@@ -71,8 +71,8 @@ namespace AppHotel
         private void ImgReservas_Click(object sender, EventArgs e)
         {
             var tela = new Intent(this, typeof(Reservas));
-            //tela.PutExtra("nome", var.userLogado);
-            //tela.PutExtra("cargo", var.cargoUser);
+            tela.PutExtra("nome", var.userLogado);
+            tela.PutExtra("cargo", var.cargoUser);
             StartActivity(tela);
         }
 
